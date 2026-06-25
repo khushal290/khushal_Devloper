@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <meta name="description" content="Khushal Yadav's personal portfolio showcasing projects, skills and contact information">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2"></script> <!-- particle background -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">   
+   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+</head>
+<body class="min-h-screen">
+    <!-- custom cursor  -->
+      <div id="cursor"></div>  
+     <!-- 3D background animation -->
+    <div class="background-3d">
+        <div class="cube"></div>
+        <div class="cube cube-2"></div>
+        <div class="cube cube-3"></div>
+    </div>
+    <!-- Loading screen overlay -->
+    <div id="loading-screen" class="fixed inset-0 flex items-center justify-center bg-black z-60">
+        <div class="loader border-4 border-t-purple-600 border-b-purple-600 rounded-full w-16 h-16 animate-spin"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-90 backdrop-blur-sm z-50 py-4 px-8 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text">Portfolio</div>
+            <div class="flex items-center space-x-6">
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-purple-400 transition-colors nav-link">Home</a>
+                    <a href="#profile" class="hover:text-purple-400 transition-colors nav-link">Profile</a>
+                    <a href="#about" class="hover:text-purple-400 transition-colors nav-link">About</a>
+                    <a href="#portfolio" class="hover:text-purple-400 transition-colors nav-link">Portfolio</a>
+                    <a href="#resume" class="hover:text-purple-400 transition-colors nav-link">Resume</a>
+                    <a href="#contact" class="hover:text-purple-400 transition-colors nav-link">Contact</a>
+                </div>
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-full bg-white bg-opacity-10 hover:bg-opacity-20 transition-all duration-300">
+                    <i class="fas fa-moon text-xl"></i>
+                </button>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden fixed left-0 top-16 w-full bg-black bg-opacity-95 backdrop-blur-sm py-4 flex-col space-y-4 px-8">
+                <a href="#home" class="hover:text-purple-400 transition-colors py-2">Home</a>
+                <a href="#profile" class="hover:text-purple-400 transition-colors py-2">Profile</a>
+                <a href="#about" class="hover:text-purple-400 transition-colors py-2">About</a>
+                <a href="#portfolio" class="hover:text-purple-400 transition-colors py-2">Portfolio</a>
+                <a href="#resume" class="hover:text-purple-400 transition-colors py-2">Resume</a>
+                <a href="#contact" class="hover:text-purple-400 transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-blue-600 z-40 transform scale-x-0 origin-left transition-transform duration-300"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-gradient-to-r from-purple-600 to-blue-600 p-3 rounded-full shadow-lg opacity-0 transform translate-y-4 transition-all duration-300 hover:scale-110 z-30 relative">
+        <i class="fas fa-arrow-up text-white"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    
+        <div class="absolute inset-0 hero-gradient opacity-20"></div>
+        <div id="tsparticles" class="absolute inset-0 z-0"></div>
+        <!-- decorative floating blobs -->
+        <div class="blob bg-purple-500"></div>
+        <div class="blob bg-blue-500"></div>
+        <div class="blob bg-pink-500"></div>
+        <div class="container mx-auto px-8 text-center z-10">
+            <div class="floating mb-8">
+                <img src="WhatsApp Image port2.jpeg" alt="Professional portrait of a software developer with modern background" class="w-48 h-48 rounded-full mx-auto border-4 border-white border-opacity-20 shadow-2xl" />
+            </div>
+            <!-- scroll down indicator -->
+            <div class="scroll-down absolute bottom-12 animate-bounce text-white text-2xl">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 typewriter">Hello, I'm <span class="gradient-text">Khushal Yadav</span></h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 fade-in-up"><span id="typed-text"></span></p>
+            <div class="flex justify-center space-x-6 fade-in-up">
+                <button class="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-3 rounded-full text-white font-semibold hover:scale-105 transition-transform">
+                    View Work
+                </button>
+                <button onclick="scrollToContact()" class="border-2 border-purple-600 px-8 py-3 rounded-full text-purple-400 font-semibold hover:bg-purple-600 hover:text-white transition-all">
+                    Contact Me
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="py-20 bg-black bg-opacity-50">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">My Profile</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Profile Card -->
+                <div class="md:col-span-1">
+                    <div class="bg-white bg-opacity-10 rounded-xl p-8 sticky top-24 card-hover">
+                        <div class="text-center mb-8">
+                            <img src="WhatsApp Image port3.jpeg " alt="Khushal Yadav" class="w-32 h-32 rounded-full mx-auto border-4 border-purple-600 mb-4" />
+                            <h3 class="text-2xl font-bold">Khushal Yadav</h3>
+                            <p class="text-purple-400 font-semibold mt-2">Software & Web Developer</p>
+                        </div>
+                        <hr class="border-gray-700 my-6">
+                        
+                        <!-- Contact Info -->
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-envelope text-purple-400 w-5"></i>
+                                <div class="text-sm">
+                                    <p class="text-gray-400">Email</p>
+                                    <p class="text-white hover:text-purple-400"><a href="mailto:khushalyadav211@gmail.com">khushalyadav211@gmail.com</a></p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-phone text-purple-400 w-5"></i>
+                                <div class="text-sm">
+                                    <p class="text-gray-400">Phone</p>
+                                    <p class="text-white">+91-7465989528</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-map-marker-alt text-purple-400 w-5"></i>
+                                <div class="text-sm">
+                                    <p class="text-gray-400">Location</p>
+                                    <p class="text-white">India</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-graduation-cap text-purple-400 w-5"></i>
+                                <div class="text-sm">
+                                    <p class="text-gray-400">Education</p>
+                                    <p class="text-white">B.Tech CSE</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr class="border-gray-700 my-6">
+                        
+                        <!-- Social Links -->
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://github.com/khushal290" target="_blank" class="social-icon text-2xl text-gray-400 hover:text-purple-400 transition-all duration-300">
+                                <i class="fab fa-github text-2xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/khushal-yadav-3544aa33b" target="_blank" class="social-icon text-2xl text-gray-400 hover:text-purple-400 transition-all duration-300">
+                                <i class="fab fa-linkedin text-2xl"></i>
+                            </a>
+                            <a href="https://x.com/khushalyadav211" target="_blank" class="social-icon text-2xl text-gray-400 hover:text-purple-400 transition-all duration-300">
+                                <i class="fab fa-twitter text-2xl"></i>
+                            </a>
+                             <a href="https://www.instagram.com/khushal39784?igsh=MTJkNnp4enlqc3JrYw==" target="_blank" class="social-icon text-2xl text-gray-400 hover:text-purple-400 transition-all duration-300">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Profile Details -->
+                <div class="md:col-span-2 space-y-8">
+                    <!-- Professional Summary -->
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6 card-hover">
+                        <h3 class="text-2xl font-bold mb-4 text-purple-400">
+                            <i class="fas fa-user-circle mr-2"></i>Professional Summary
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Ambitious B.Tech student in Computer Science Engineering, passionate about technology and problem-solving. Currently exploring software development and web technologies, building projects to sharpen skills and bring ideas to life. With a strong foundation in programming and web development, I focus on learning new frameworks and best practices. Dedicated to continuous learning, innovation, and creating meaningful digital experiences.
+                        </p>
+                    </div>
+                    
+                    <!-- Education -->
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6 card-hover">
+                        <h3 class="text-2xl font-bold mb-4 text-purple-400">
+                            <i class="fas fa-book mr-2"></i>Education
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-purple-600 pl-4">
+                                <h4 class="text-xl font-semibold text-white">B.Tech in Computer Science Engineering</h4>
+                                <p class="text-purple-400 font-medium">2nd Year Student (2025-26)</p>
+                                <p class="text-gray-400 mt-2">Graduation Completed in: 2028</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Core Skills -->
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6 card-hover">
+                        <h3 class="text-2xl font-bold mb-4 text-purple-400">
+                            <i class="fas fa-star mr-2"></i>Core Skills
+                        </h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-gradient-to-r from-purple-600 to-blue-600 bg-opacity-20 p-3 rounded-lg">
+                                <p class="font-semibold text-white">Languages</p>
+                                <p class="text-sm text-gray-300">C, Python, JavaScript, Java</p>
+                            </div>
+                            <div class="bg-gradient-to-r from-purple-600 to-blue-600 bg-opacity-20 p-3 rounded-lg">
+                                <p class="font-semibold text-white">Frontend</p>
+                                <p class="text-sm text-gray-300">HTML, CSS, Tailwind CSS, React.js</p>
+                            </div>
+                            <div class="bg-gradient-to-r from-purple-600 to-blue-600 bg-opacity-20 p-3 rounded-lg">
+                                <p class="font-semibold text-white">Backend</p>
+                                <p class="text-sm text-gray-300">Django, Python</p>
+                            </div>
+                            <div class="bg-gradient-to-r from-purple-600 to-blue-600 bg-opacity-20 p-3 rounded-lg">
+                                <p class="font-semibold text-white">Cloud & Tools</p>
+                                <p class="text-sm text-gray-300">AWS, Azure, GCP, Git, GitHub</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Key Projects -->
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6 card-hover">
+                        <h3 class="text-2xl font-bold mb-4 text-purple-400">
+                            <i class="fas fa-project-diagram mr-2"></i>Key Projects
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-purple-400 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-white">Weather Application</p>
+                                    <p class="text-sm text-gray-400">Real-time weather data display using HTML, CSS & JavaScript</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-purple-400 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-white">Amazon Landing Page Clone</p>
+                                    <p class="text-sm text-gray-400">Responsive design recreation using HTML, CSS & Tailwind CSS</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-purple-400 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-white">Tic Tac Toe Game</p>
+                                    <p class="text-sm text-gray-400">Interactive game showcasing JavaScript logic and game mechanics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-black bg-opacity-50">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg text-gray-300 mb-6">
+                        "Hi, I’m Khushal Yadav and i`am B.Tech 2nd year student passionate about technology, problem-solving, and innovation. I’m currently exploring software development and web technologies, building projects that help me sharpen my skills and bring ideas to life. My journey is all about learning, experimenting, and growing into a developer who creates meaningful digital experiences."
+                </p>
+                    <p class="text-lg text-gray-300 mb-8">
+                        My expertise includes C , Java Python programming language, HTML, Css & JavaScript I'm constantly learning and adapting to new technologies.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white bg-opacity-10 p-4 rounded-lg card-hover fade-in-up">
+                            <i class="fas fa-code text-3xl text-purple-400 mb-2"></i>
+                            <h3 class="font-semibold mb-2">Frontend</h3>
+                            <p class="text-sm text-gray-400">HTML Css, JavaScript & React.js</p>
+                        </div>
+                        <div class="bg-white bg-opacity-10 p-4 rounded-lg card-hover fade-in-up">
+                            <i class="fas fa-server text-3xl text-purple-400 mb-2"></i>
+                            <h3 class="font-semibold mb-2">Backend</h3>
+                            <p class="text-sm text-gray-400">Django & Python</p>
+                        </div>
+
+                        <div class="bg-white bg-opacity-10 p-4 rounded-lg card-hover fade-in-up">                                          
+                             <!-- <i class="devicon-c-original colored"></i> -->
+                            <h1>C & Java</h1>
+                            <p class="text-sm text-gray-400">Programming language</p>
+                        </div>
+                        <div class="bg-white bg-opacity-10 p-4 rounded-lg card-hover fade-in-up">                                    
+                        <i class="devicon-python-plain"></i>                   
+                            <h3 class="font-semibold mb-2"></h3>
+                            <p class="text-sm text-gray-400">AWS, Azure, GCP</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-300">JavaScript</span>
+                            <span class="text-purple-400">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-600 to-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-300">Css</span>
+                            <span class="text-purple-400">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-600 to-blue-600 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-300">Html</span>
+                            <span class="text-purple-400">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-600 to-blue-600 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-300">C</span>
+                            <span class="text-purple-400">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-600 to-blue-600 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-300">Python</span>
+                            <span class="text-purple-400">75%</span>
+                        </div> <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-600 to-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-300">DSA with Java</span>
+                            <span class="text-purple-400">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="skill-bar bg-blue-600 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">My Portfolio</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="bg-white bg-opacity-10 rounded-xl overflow-hidden card-hover project-card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="Screenshot 2025-09-11 052707.png" class="w-full h-full object-cover transition-transform duration-300" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Weather Application</h3>
+                        <p class="text-gray-400 mb-4">My first wheather Application creat by using Html, Css & JavaScript</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">Html</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">Css</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        </div>
+                        <button class="w-full bg-purple-600 bg-opacity-20 text-purple-300 py-2 rounded-lg hover:bg-opacity-30 transition-all">
+                    <a target="_blank" href="index-2.html" >View Project</a>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-xl overflow-hidden card-hover project-card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="Screenshot 2025-09-07 145846.png" class="w-full h-full object-cover transition-transform duration-300" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Amazon landing page </h3>
+                        <p class="text-gray-400 mb-4"> Recreated the Amazon Landing Page as a practice project⚡💻</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">Css </span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">tailwindcss</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">Html</span>
+                        </div>
+                        <button class="w-full bg-purple-600 bg-opacity-20 text-purple-300 py-2 rounded-lg hover:bg-opacity-30 transition-all">
+                    <a target="_blank" href="index-1.html"> View Project </a>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-xl overflow-hidden card-hover project-card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="Screenshot 2025-09-07 145514.png" alt="Dashboard analytics platform with data visualization and charts" class="w-full h-full object-cover transition-transform duration-300" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Tic Tac Toe game</h3>
+                        <p class="text-gray-400 mb-4">Here's my beginner-friendly Tic Tac Toe game a mix of logic ,design and lots of learning</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">Css</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">Html</span>
+                        </div>
+                        <button class="w-full bg-purple-600 bg-opacity-20 text-purple-300 py-2 rounded-lg hover:bg-opacity-30 transition-all">
+                <a target="_blank" href="index-3.html"> View Project </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-20 bg-black bg-opacity-50">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">My Resume</h2>
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Education -->
+                <div class="bg-white bg-opacity-10 rounded-xl p-8 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-graduation-cap text-3xl text-purple-400 mr-4"></i>
+                        <h3 class="text-2xl font-bold">Education</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-purple-600 pl-4">
+                            <h4 class="font-semibold text-lg">B.Tech (2nd Year)</h4>
+                            <p class="text-gray-400">Computer Science Engineering</p>
+                            <p class="text-sm text-purple-300">Expected: 2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="bg-white bg-opacity-10 rounded-xl p-8 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-code text-3xl text-purple-400 mr-4"></i>
+                        <h3 class="text-2xl font-bold">Skills</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="block bg-purple-600 bg-opacity-20 px-3 py-2 rounded text-purple-300 text-sm">Languages: C, Python, JavaScript Java</span>
+                        <span class="block bg-purple-600 bg-opacity-20 px-3 py-2 rounded text-purple-300 text-sm">Frontend: HTML, CSS, Tailwind CSS</span>
+                        <span class="block bg-purple-600 bg-opacity-20 px-3 py-2 rounded text-purple-300 text-sm">Backend: Django, Python</span>
+                        <span class="block bg-purple-600 bg-opacity-20 px-3 py-2 rounded text-purple-300 text-sm">Platforms: AWS, Netlify</span>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="bg-white bg-opacity-10 rounded-xl p-8 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-briefcase text-3xl text-purple-400 mr-4"></i>
+                        <h3 class="text-2xl font-bold">Experience</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-purple-600 pl-4">
+                            <h4 class="font-semibold text-lg">Web Developer (Personal Projects)</h4>
+                            <p class="text-gray-400">Building web applications & learning</p>
+                            <p class="text-sm text-purple-300">2024 - Present</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Resume Button -->
+            <div class="text-center">
+                <button id="downloadResume" class="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-4 rounded-full text-white font-semibold hover:scale-105 transition-transform inline-flex items-center space-x-3">
+                    <i class="fas fa-download"></i>
+                    <span>Download Resume (TXT)</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">What People Say</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 card-hover testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">A</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Anonymous</h4>
+                            <p class="text-sm text-gray-400">Developer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Great portfolio! The projects showcase real skills and creativity. Keep up the good work!"</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 card-hover testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">B</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Anonymous</h4>
+                            <p class="text-sm text-gray-400">Designer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Impressive web development skills! The attention to detail and modern design is outstanding."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 card-hover testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">C</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Anonymous</h4>
+                            <p class="text-sm text-gray-400">Mentor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Excellent problem-solving approach and clean code. A promising developer with great potential!"</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-black bg-opacity-50">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Get In Touch</h2>
+            <div class="max-w-2xl mx-auto">
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <input type="text" name="name" placeholder="Your Name" class="w-full contact-input bg-white bg-opacity-10 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-600" required>
+                        </div>
+                        <div>
+                            <input type="email" name="email" placeholder="Your Email" class="w-full contact-input bg-white bg-opacity-10 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-600" required>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" name="subject" placeholder="Subject" class="w-full contact-input bg-white bg-opacity-10 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-600" required>
+                    </div>
+                    <div>
+                        <textarea name="message" placeholder="Your Message" rows="5" class="w-full contact-input bg-white bg-opacity-10 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-600 resize-none" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-blue-600 py-3 rounded-lg text-white font-semibold hover:scale-105 transition-transform">
+                        Send Message
+                    </button>
+                </form>
+                
+                <div class="mt-12 text-center">
+                    <div class="flex justify-center space-x-6 mb-6">
+                        <a href="https://www.linkedin.com/in/khushal-yadav-3544aa33b" target="_blank" class="social-icon text-2xl text-gray-400 hover:text-purple-400 transition-all duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/khushal290" target="_blank" class="social-icon text-2xl text-gray-400 hover:text-purple-400 transition-all duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/khushalyadav211" target="_blank" class="social-icon text-2xl text-gray-400 hover:text-purple-400 transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/khushal39784?igsh=MTJkNnp4enlqc3JrYw==" target="_blank" class="social-icon text-2xl text-gray-400 hover:text-purple-400 transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400"><a href="mailto:khushalyadav211@gmail.com" class="hover:text-purple-400 transition-colors">Email: khushalyadav211@gmail.com</a></p>
+                    <p class="text-gray-400"><a href="tel:+917465989528" class="hover:text-purple-400 transition-colors">Phone: +91-7465989528</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-black bg-opacity-90 text-center">
+        <p class="text-gray-400">© <span id="year"></span> Khushal Yadav. All rights reserved.</p>
+    </footer>
+
+    <script src="p2.js"></script>
+</body>
+</html>
