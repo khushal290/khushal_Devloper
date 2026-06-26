@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <meta name="description" content="Khushal Yadav's personal portfolio showcasing projects, skills and contact information">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2"></script> <!-- particle background -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">   
    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">    
     <link rel="stylesheet" href="style.css">
 
@@ -40,6 +38,8 @@
                     <a href="#profile" class="hover:text-purple-400 transition-colors nav-link">Profile</a>
                     <a href="#about" class="hover:text-purple-400 transition-colors nav-link">About</a>
                     <a href="#portfolio" class="hover:text-purple-400 transition-colors nav-link">Portfolio</a>
+                    <a href="#certifications" class="hover:text-purple-400 transition-colors nav-link">Certifications</a>
+                    <a href="#skills-journey" class="hover:text-purple-400 transition-colors nav-link">Skills Journey</a>
                     <a href="#resume" class="hover:text-purple-400 transition-colors nav-link">Resume</a>
                     <a href="#contact" class="hover:text-purple-400 transition-colors nav-link">Contact</a>
                 </div>
@@ -59,6 +59,8 @@
                 <a href="#profile" class="hover:text-purple-400 transition-colors py-2">Profile</a>
                 <a href="#about" class="hover:text-purple-400 transition-colors py-2">About</a>
                 <a href="#portfolio" class="hover:text-purple-400 transition-colors py-2">Portfolio</a>
+                <a href="#certifications" class="hover:text-purple-400 transition-colors py-2">Certifications</a>
+                <a href="#skills-journey" class="hover:text-purple-400 transition-colors py-2">Skills Journey</a>
                 <a href="#resume" class="hover:text-purple-400 transition-colors py-2">Resume</a>
                 <a href="#contact" class="hover:text-purple-400 transition-colors py-2">Contact</a>
             </div>
@@ -84,7 +86,7 @@
         <div class="blob bg-pink-500"></div>
         <div class="container mx-auto px-8 text-center z-10">
             <div class="floating mb-8">
-                <img src="WhatsApp Image port2.jpeg" alt="Professional portrait of a software developer with modern background" class="w-48 h-48 rounded-full mx-auto border-4 border-white border-opacity-20 shadow-2xl" />
+                <img src="profile-hero.jpeg" alt="Portrait of Khushal Yadav, software and web developer" class="w-48 h-48 rounded-full mx-auto border-4 border-white border-opacity-20 shadow-2xl object-cover" />
             </div>
             <!-- scroll down indicator -->
             <div class="scroll-down absolute bottom-12 animate-bounce text-white text-2xl">
@@ -92,13 +94,16 @@
             </div>
             <h1 class="text-5xl md:text-7xl font-bold mb-4 typewriter">Hello, I'm <span class="gradient-text">Khushal Yadav</span></h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-8 fade-in-up"><span id="typed-text"></span></p>
-            <div class="flex justify-center space-x-6 fade-in-up">
-                <button class="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-3 rounded-full text-white font-semibold hover:scale-105 transition-transform">
+            <div class="flex flex-wrap justify-center gap-4 fade-in-up">
+                <button onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})" class="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-3 rounded-full text-white font-semibold hover:scale-105 transition-transform">
                     View Work
                 </button>
                 <button onclick="scrollToContact()" class="border-2 border-purple-600 px-8 py-3 rounded-full text-purple-400 font-semibold hover:bg-purple-600 hover:text-white transition-all">
                     Contact Me
                 </button>
+                <a href="resume.pdf" download="Khushal_Yadav_Resume.pdf" class="download-btn">
+                    <i class="fas fa-download dl-icon"></i><span>Download Resume</span>
+                </a>
             </div>
         </div>
     </section>
@@ -112,7 +117,7 @@
                 <div class="md:col-span-1">
                     <div class="bg-white bg-opacity-10 rounded-xl p-8 sticky top-24 card-hover">
                         <div class="text-center mb-8">
-                            <img src="WhatsApp Image port3.jpeg " alt="Khushal Yadav" class="w-32 h-32 rounded-full mx-auto border-4 border-purple-600 mb-4" />
+                            <img src="profile-card.jpeg" alt="Khushal Yadav" class="w-32 h-32 rounded-full mx-auto border-4 border-purple-600 mb-4 object-cover" />
                             <h3 class="text-2xl font-bold">Khushal Yadav</h3>
                             <p class="text-purple-400 font-semibold mt-2">Software & Web Developer</p>
                         </div>
@@ -178,7 +183,7 @@
                             <i class="fas fa-user-circle mr-2"></i>Professional Summary
                         </h3>
                         <p class="text-gray-300 leading-relaxed">
-                            Ambitious B.Tech student in Computer Science Engineering, passionate about technology and problem-solving. Currently exploring software development and web technologies, building projects to sharpen skills and bring ideas to life. With a strong foundation in programming and web development, I focus on learning new frameworks and best practices. Dedicated to continuous learning, innovation, and creating meaningful digital experiences.
+                Passionate Java Full Stack Developer with hands-on experience in building scalable web applications and RESTful APIs using Java, Spring Boot, MySQL, and modern frontend technologies. Skilled in Data Structures & Algorithms, Object-Oriented Programming, Database Design, API Development, Git/GitHub, Postman, and software development best practices. Experienced in developing real-world projects like GitHub Dashboard, Weather App, and Portfolio Website, along with completing industry-based virtual internships from JP Morgan Chase, Walmart Global Tech, and Wells Fargo. Continuously improving problem-solving, backend architecture, system design, and cloud fundamentals to grow as a Software Engineer.
                         </p>
                     </div>
                     
@@ -204,19 +209,19 @@
                         <div class="grid grid-cols-2 gap-3">
                             <div class="bg-gradient-to-r from-purple-600 to-blue-600 bg-opacity-20 p-3 rounded-lg">
                                 <p class="font-semibold text-white">Languages</p>
-                                <p class="text-sm text-gray-300">C, Python, JavaScript, Java</p>
+                                <p class="text-sm text-gray-300">C, Java, JavaScript, Python , SQL</p>
                             </div>
                             <div class="bg-gradient-to-r from-purple-600 to-blue-600 bg-opacity-20 p-3 rounded-lg">
                                 <p class="font-semibold text-white">Frontend</p>
-                                <p class="text-sm text-gray-300">HTML, CSS, Tailwind CSS, React.js</p>
+                                <p class="text-sm text-gray-300">HTML, CSS, Tailwind CSS, JavaScript, React.js</p>
                             </div>
                             <div class="bg-gradient-to-r from-purple-600 to-blue-600 bg-opacity-20 p-3 rounded-lg">
                                 <p class="font-semibold text-white">Backend</p>
-                                <p class="text-sm text-gray-300">Django, Python</p>
+                                <p class="text-sm text-gray-300">Core Java, Spring Boot, MySQL, Spring Security, RESTful APIs, Hibernate</p>
                             </div>
                             <div class="bg-gradient-to-r from-purple-600 to-blue-600 bg-opacity-20 p-3 rounded-lg">
                                 <p class="font-semibold text-white">Cloud & Tools</p>
-                                <p class="text-sm text-gray-300">AWS, Azure, GCP, Git, GitHub</p>
+                                <p class="text-sm text-gray-300">AWS, Azure, Git, GitHub, Postman, Docker, Maven, Render, Vercel</p>
                             </div>
                         </div>
                     </div>
@@ -226,8 +231,15 @@
                         <h3 class="text-2xl font-bold mb-4 text-purple-400">
                             <i class="fas fa-project-diagram mr-2"></i>Key Projects
                         </h3>
-                        <div class="space-y-3">
+                        <div class="space-y-3">                   
                             <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-purple-400 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-white">RepoScope — GitHub-dashboard-Application</p>
+                                    <p class="text-sm text-gray-400">REST API backend in Spring Boot consuming the GitHub API, with caching and centralized exception handling</p>
+                                </div>
+                            </div>
+                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-purple-400 mt-1"></i>
                                 <div>
                                     <p class="font-semibold text-white">Weather Application</p>
@@ -244,7 +256,7 @@
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-purple-400 mt-1"></i>
                                 <div>
-                                    <p class="font-semibold text-white">Tic Tac Toe Game</p>
+                                    <p class="font-semibold text-white">Rock&ndash;Paper&ndash;Scissors Game</p>
                                     <p class="text-sm text-gray-400">Interactive game showcasing JavaScript logic and game mechanics</p>
                                 </div>
                             </div>
@@ -262,10 +274,10 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <p class="text-lg text-gray-300 mb-6">
-                        "Hi, I’m Khushal Yadav and i`am B.Tech 2nd year student passionate about technology, problem-solving, and innovation. I’m currently exploring software development and web technologies, building projects that help me sharpen my skills and bring ideas to life. My journey is all about learning, experimenting, and growing into a developer who creates meaningful digital experiences."
+                        I'm a Java Full Stack Developer passionate about building scalable and efficient web applications. Skilled in Java, Spring Boot, MySQL, React, JavaScript, and Git/GitHub, with hands-on experience in developing REST APIs and database-driven applications. I enjoy solving problems with Data Structures and Algorithms and continuously improving my software engineering skills through real-world projects.
                 </p>
                     <p class="text-lg text-gray-300 mb-8">
-                        My expertise includes C , Java Python programming language, HTML, Css & JavaScript I'm constantly learning and adapting to new technologies.
+                        My expertise includes Java, Spring Boot, MySQL, React, HTML, CSS &amp; JavaScript. I’m continuously learning and building scalable full-stack applications.
                     </p>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="bg-white bg-opacity-10 p-4 rounded-lg card-hover fade-in-up">
@@ -276,21 +288,23 @@
                         <div class="bg-white bg-opacity-10 p-4 rounded-lg card-hover fade-in-up">
                             <i class="fas fa-server text-3xl text-purple-400 mb-2"></i>
                             <h3 class="font-semibold mb-2">Backend</h3>
-                            <p class="text-sm text-gray-400">Django & Python</p>
+                            <p class="text-sm text-gray-400">Java, Spring Boot, MySQL and RESTful APIs</p>
                         </div>
 
-                        <div class="bg-white bg-opacity-10 p-4 rounded-lg card-hover fade-in-up">                                          
-                             <!-- <i class="devicon-c-original colored"></i> -->
-                            <h1>C & Java</h1>
-                            <p class="text-sm text-gray-400">Programming language</p>
+                        <div class="bg-white bg-opacity-10 p-4 rounded-lg card-hover fade-in-up">
+                            <i class="fas fa-terminal text-3xl text-purple-400 mb-2"></i>
+                            <h3 class="font-semibold mb-2">C , Python &amp; Java</h3>
+                            <p class="text-sm text-gray-400">Programming languages</p>
                         </div>
-                        <div class="bg-white bg-opacity-10 p-4 rounded-lg card-hover fade-in-up">                                    
-                        <i class="devicon-python-plain"></i>                   
-                            <h3 class="font-semibold mb-2"></h3>
-                            <p class="text-sm text-gray-400">AWS, Azure, GCP</p>
+                        <div class="bg-white bg-opacity-10 p-4 rounded-lg card-hover fade-in-up">
+                            <i class="fas fa-cloud text-3xl text-purple-400 mb-2"></i>
+                            <h3 class="font-semibold mb-2">Cloud</h3>
+                            <p class="text-sm text-gray-400">AWS, Vercel, Netlify</p>
                         </div>
                     </div>
                 </div>
+            
+                <div>
                 <div class="space-y-6">
                     <div>
                         <div class="flex justify-between mb-2">
@@ -338,11 +352,19 @@
                     </div>
                     <div>
                         <div class="flex justify-between mb-2">
+                            <span class="text-gray-300">Java</span>
+                            <span class="text-purple-400">75%</span>
+                        </div> <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-600 to-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
                             <span class="text-gray-300">DSA with Java</span>
-                            <span class="text-purple-400">80%</span>
+                            <span class="text-purple-400">70%</span>
                         </div>
                         <div class="w-full bg-gray-700 rounded-full h-2">
-                            <div class="skill-bar bg-blue-600 h-2 rounded-full" style="width: 80%"></div>
+                            <div class="skill-bar bg-blue-600 h-2 rounded-full" style="width: 70%"></div>
                         </div>
                     </div>
                 </div>
@@ -355,13 +377,59 @@
             <h2 class="text-4xl font-bold text-center mb-16 gradient-text">My Portfolio</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
+                <!-- Featured / Latest Project: GitHub Dashboard -->
+                <div class="relative bg-white bg-opacity-10 rounded-xl overflow-hidden card-hover project-card lg:col-span-2 ring-1 ring-purple-500 ring-opacity-40">
+                    <span class="absolute top-4 left-4 z-10 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
+                        <i class="fas fa-star mr-1"></i>Latest Project
+                    </span>
+                    <div class="h-56 overflow-hidden bg-gradient-to-br from-slate-800 via-purple-800 to-indigo-900 flex items-center justify-center transition-transform duration-300 relative">
+                        <i class="fab fa-github text-7xl text-white opacity-90"></i>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-2xl font-semibold mb-2">GitHub Dashboard</h3>
+                        <p class="text-gray-400 mb-4">
+                            A web application that fetches and displays GitHub user profile data, repositories,
+                            contribution stats, and activity insights using the GitHub API.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">HTML</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">CSS</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">REST API</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">GitHub API</span>
+                        </div>
+
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 mb-6 text-sm text-gray-300">
+                            <li><i class="fas fa-check text-purple-400 mr-2"></i>User search</li>
+                            <li><i class="fas fa-check text-purple-400 mr-2"></i>Repository analytics</li>
+                            <li><i class="fas fa-check text-purple-400 mr-2"></i>Profile stats</li>
+                            <li><i class="fas fa-check text-purple-400 mr-2"></i>Responsive UI</li>
+                            <li><i class="fas fa-check text-purple-400 mr-2"></i>Dark / light mode</li>
+                        </ul>
+
+                        <div class="flex flex-wrap gap-3">
+                            <a href=" https://github.com/khushal290/github-dashboard-Application" target="_blank" rel="noopener" class="flex-1 min-w-[140px] text-center bg-purple-600 bg-opacity-20 text-purple-300 py-2 rounded-lg hover:bg-opacity-30 transition-all">
+                                <i class="fab fa-github mr-2"></i>View Code
+                            </a>
+                            <a href="https://github-dashboard-application.onrender.com" target="_blank" rel="noopener" class="flex-1 min-w-[140px] text-center bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 rounded-lg hover:scale-[1.02] transition-transform">
+                                <i class="fas fa-arrow-up-right-from-square mr-2"></i>Live Demo
+                            </a>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-3">
+                            <i class="fas fa-circle-info mr-1"></i>Replace these two links with your real repository and deployed demo URLs.
+                        </p>
+                    </div>
+                </div>
+
                 <div class="bg-white bg-opacity-10 rounded-xl overflow-hidden card-hover project-card">
-                    <div class="h-48 overflow-hidden">
-                        <img src="Screenshot 2025-09-11 052707.png" class="w-full h-full object-cover transition-transform duration-300" />
+                    <div class="h-48 overflow-hidden bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 flex items-center justify-center transition-transform duration-300">
+                        <i class="fas fa-cloud-sun text-6xl text-white opacity-90"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">Weather Application</h3>
-                        <p class="text-gray-400 mb-4">My first wheather Application creat by using Html, Css & JavaScript</p>
+                        <p class="text-gray-400 mb-4">Real-time weather lookup by city or current location, built with HTML, CSS &amp; JavaScript</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">Html</span>
                             <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">Css</span>
@@ -374,8 +442,8 @@
                 </div>
 
                 <div class="bg-white bg-opacity-10 rounded-xl overflow-hidden card-hover project-card">
-                    <div class="h-48 overflow-hidden">
-                        <img src="Screenshot 2025-09-07 145846.png" class="w-full h-full object-cover transition-transform duration-300" />
+                    <div class="h-48 overflow-hidden bg-gradient-to-br from-amber-500 via-orange-600 to-yellow-700 flex items-center justify-center transition-transform duration-300">
+                        <i class="fas fa-cart-shopping text-6xl text-white opacity-90"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">Amazon landing page </h3>
@@ -392,12 +460,12 @@
                 </div>
 
                 <div class="bg-white bg-opacity-10 rounded-xl overflow-hidden card-hover project-card">
-                    <div class="h-48 overflow-hidden">
-                        <img src="Screenshot 2025-09-07 145514.png" alt="Dashboard analytics platform with data visualization and charts" class="w-full h-full object-cover transition-transform duration-300" />
+                    <div class="h-48 overflow-hidden bg-gradient-to-br from-pink-500 via-fuchsia-600 to-rose-700 flex items-center justify-center transition-transform duration-300">
+                        <i class="fas fa-hand-scissors text-6xl text-white opacity-90"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Tic Tac Toe game</h3>
-                        <p class="text-gray-400 mb-4">Here's my beginner-friendly Tic Tac Toe game a mix of logic ,design and lots of learning</p>
+                        <h3 class="text-xl font-semibold mb-2">Rock&ndash;Paper&ndash;Scissors Game</h3>
+                        <p class="text-gray-400 mb-4">A beginner-friendly Rock-Paper-Scissors game with live score tracking &mdash; a mix of logic, design and lots of learning</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">JavaScript</span>
                             <span class="bg-purple-600 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm">Css</span>
@@ -425,9 +493,19 @@
                     </div>
                     <div class="space-y-4">
                         <div class="border-l-4 border-purple-600 pl-4">
-                            <h4 class="font-semibold text-lg">B.Tech (2nd Year)</h4>
+                            <h4 class="font-semibold text-lg">B.Tech (3rd Year)</h4>
                             <p class="text-gray-400">Computer Science Engineering</p>
-                            <p class="text-sm text-purple-300">Expected: 2026</p>
+                            <p class="text-sm text-purple-300">2026-2027</p>
+                        </div>
+                        <div class="border-l-4 border-purple-600 pl-4">
+                            <h4 class="font-semibold text-lg">Higher Secondary Education (12th Grade)</h4>
+                            <p class="text-gray-400">Science Stream</p>
+                            <p class="text-sm text-purple-300">2021-2023</p>
+                        </div>
+                        <div class="border-l-4 border-purple-600 pl-4">
+                            <h4 class="font-semibold text-lg">Secondary Education (10th Grade)</h4>
+                            <p class="text-gray-400">Science Stream</p>
+                            <p class="text-sm text-purple-300">2019-2021</p>
                         </div>
                     </div>
                 </div>
@@ -439,10 +517,10 @@
                         <h3 class="text-2xl font-bold">Skills</h3>
                     </div>
                     <div class="space-y-2">
-                        <span class="block bg-purple-600 bg-opacity-20 px-3 py-2 rounded text-purple-300 text-sm">Languages: C, Python, JavaScript Java</span>
-                        <span class="block bg-purple-600 bg-opacity-20 px-3 py-2 rounded text-purple-300 text-sm">Frontend: HTML, CSS, Tailwind CSS</span>
-                        <span class="block bg-purple-600 bg-opacity-20 px-3 py-2 rounded text-purple-300 text-sm">Backend: Django, Python</span>
-                        <span class="block bg-purple-600 bg-opacity-20 px-3 py-2 rounded text-purple-300 text-sm">Platforms: AWS, Netlify</span>
+                        <span class="block bg-purple-600 bg-opacity-20 px-3 py-2 rounded text-purple-300 text-sm">Languages: C, Java, JavaScript, Python</span>
+                        <span class="block bg-purple-600 bg-opacity-20 px-3 py-2 rounded text-purple-300 text-sm">Frontend: HTML, CSS, Tailwind CSS , JavaScript</span>
+                        <span class="block bg-purple-600 bg-opacity-20 px-3 py-2 rounded text-purple-300 text-sm">Backend: Spring Boot, MySQL, Spring MVC, Rest APIs and Hibernate</span>
+                        <span class="block bg-purple-600 bg-opacity-20 px-3 py-2 rounded text-purple-300 text-sm">Platforms: AWS, Netlify, Render, Vercel</span>
                     </div>
                 </div>
 
@@ -454,9 +532,14 @@
                     </div>
                     <div class="space-y-4">
                         <div class="border-l-4 border-purple-600 pl-4">
-                            <h4 class="font-semibold text-lg">Web Developer (Personal Projects)</h4>
-                            <p class="text-gray-400">Building web applications & learning</p>
-                            <p class="text-sm text-purple-300">2024 - Present</p>
+                            <h4 class="font-semibold text-lg">Software Developer (Personal Projects)</h4>
+                            <p class="text-gray-400">• Building scalable web applications using Java, Spring Boot, and MySQL.</p>
+                            <p class="text-gray-400">• Developing RESTful APIs and integrating with databases.</p>
+                            <p class="text-gray-400">• Implementing frontend technologies like HTML, CSS, and JavaScript.</p>
+                            <p class="text-gray-400">• Hands-on with Git, GitHub, Postman, Maven, and modern development tools.</p>
+                            <p class="text-gray-400">• Created real-world projects like GitHub Dashboard, Weather App, and Portfolio Website.</p>
+                            <p class="text-gray-400">• Completed software engineering virtual internships from JP Morgan Chase, Walmart, and Wells Fargo.</p>
+                            <p class="text-sm text-purple-300">2026 - Present</p>
                         </div>
                     </div>
                 </div>
@@ -464,15 +547,251 @@
 
             <!-- Download Resume Button -->
             <div class="text-center">
-                <button id="downloadResume" class="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-4 rounded-full text-white font-semibold hover:scale-105 transition-transform inline-flex items-center space-x-3">
-                    <i class="fas fa-download"></i>
-                    <span>Download Resume (TXT)</span>
-                </button>
+                <a href="resume.pdf" download="Khushal_Yadav_Resume.pdf" class="download-btn">
+                    <i class="fas fa-download dl-icon"></i><span>Download Resume (PDF)</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Certifications</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 card-hover cert-card">
+                    <div class="flex items-start space-x-4">
+                        <div class="cert-badge">
+                            <i class="fas fa-cloud text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between gap-2">
+                                <h3 class="text-lg font-semibold text-white">JP Morgan Software Engineering Virtual Internship</h3>
+                                <span class="shrink-0 text-xs font-medium text-purple-300 bg-purple-600 bg-opacity-20 px-2 py-1 rounded-full">2026</span>
+                            </div>
+                            <p class="text-sm text-purple-300 mt-1 mb-2"><i class="fas fa-building mr-1"></i>JP Morgan Chase</p>
+                            <p class="text-sm text-gray-400">Completed software engineering virtual internship.</p>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 card-hover cert-card">
+                    <div class="flex items-start space-x-4">
+                        <div class="cert-badge">
+                            <i class="fas fa-code text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between gap-2">
+                                <h3 class="text-lg font-semibold text-white">Walmart Global Tech Virtual Internship</h3>
+                                <span class="shrink-0 text-xs font-medium text-purple-300 bg-purple-600 bg-opacity-20 px-2 py-1 rounded-full">2026</span>
+                            </div>
+                            <p class="text-sm text-purple-300 mt-1 mb-2"><i class="fas fa-building mr-1"></i>Walmart Global Tech</p>
+                            <p class="text-sm text-gray-400">Completed virtual internship in software engineering.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 card-hover cert-card">
+                    <div class="flex items-start space-x-4">
+                        <div class="cert-badge">
+                            <i class="fas fa-laptop-code text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between gap-2">
+                                <h3 class="text-lg font-semibold text-white">Wells Fargo Software Engineering Virtual Internship</h3>
+                                <span class="shrink-0 text-xs font-medium text-purple-300 bg-purple-600 bg-opacity-20 px-2 py-1 rounded-full">2026</span>
+                            </div>
+                            <p class="text-sm text-purple-300 mt-1 mb-2"><i class="fas fa-building mr-1"></i>Wells Fargo</p>
+                            <p class="text-sm text-gray-400">Completed virtual internship in software engineering.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 card-hover cert-card">
+                    <div class="flex items-start space-x-4">
+                        <div class="cert-badge">
+                            <i class="fab fa-java text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between gap-2">
+                                <h3 class="text-lg font-semibold text-white">Java Programming Masterclass</h3>
+                                <span class="shrink-0 text-xs font-medium text-purple-300 bg-purple-600 bg-opacity-20 px-2 py-1 rounded-full">2025</span>
+                            </div>
+                            <p class="text-sm text-purple-300 mt-1 mb-2"><i class="fas fa-building mr-1"></i>Self-Learned</p>
+                            <p class="text-sm text-gray-400">Core Java, OOP concepts, collections and exception handling.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 card-hover cert-card">
+                    <div class="flex items-start space-x-4">
+                        <div class="cert-badge">
+                            <i class="fas fa-sitemap text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between gap-2">
+                                <h3 class="text-lg font-semibold text-white">Data Structures &amp; Algorithms</h3>
+                                <span class="shrink-0 text-xs font-medium text-purple-300 bg-purple-600 bg-opacity-20 px-2 py-1 rounded-full">2025</span>
+                            </div>
+                            <p class="text-sm text-purple-300 mt-1 mb-2"><i class="fas fa-building mr-1"></i>GeeksforGeeks & Leetcode</p>
+                            <p class="text-sm text-gray-400">Arrays, linked lists, trees, graphs, sorting and problem solving.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 card-hover cert-card">
+                    <div class="flex items-start space-x-4">
+                        <div class="cert-badge">
+                            <i class="fab fa-git-alt text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between gap-2">
+                                <h3 class="text-lg font-semibold text-white">Git &amp; GitHub Essentials</h3>
+                                <span class="shrink-0 text-xs font-medium text-purple-300 bg-purple-600 bg-opacity-20 px-2 py-1 rounded-full">2025</span>
+                            </div>
+                            <p class="text-sm text-purple-300 mt-1 mb-2"><i class="fas fa-building mr-1"></i>Self-Taught</p>
+                            <p class="text-sm text-gray-400">Version control workflows, branching, pull requests and collaboration.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <p class="text-center text-gray-500 text-sm mt-10">
+                <i class="fas fa-circle-info mr-1"></i>
+                Sample certifications &mdash; replace title, issuer and date in each card with your actual credentials.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Learned Journey Section -->
+    <section id="skills-journey" class="py-20 bg-black bg-opacity-50">
+        <div class="container mx-auto px-8">
+            <h2 class="text-4xl font-bold text-center mb-4 gradient-text">Skills Learned Journey</h2>
+            <p class="text-center text-gray-400 max-w-2xl mx-auto mb-16">
+                Skills picked up along the way &mdash; through hands-on projects, certifications, and a lot of debugging.
+            </p>
+
+            <div class="relative max-w-3xl mx-auto">
+                <!-- vertical timeline line -->
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-purple-600 via-blue-600 to-transparent md:-translate-x-1/2"></div>
+
+                <div class="space-y-8">
+
+                    <div class="skill-step relative pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-8 fade-in-up">
+                        <div class="absolute left-0 md:left-1/2 top-1 w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center md:-translate-x-1/2 shadow-lg shadow-purple-900/50">
+                            <i class="fab fa-java text-sm text-white"></i>
+                        </div>
+                        <div class="md:text-right md:pr-4">
+                            <h3 class="font-semibold text-white text-lg">Java</h3>
+                            <p class="text-sm text-gray-400">Core syntax, collections and building small console applications.</p>
+                        </div>
+                        <div class="hidden md:block"></div>
+                    </div>
+
+                    <div class="skill-step relative pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-8 fade-in-up">
+                        <div class="absolute left-0 md:left-1/2 top-1 w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center md:-translate-x-1/2 shadow-lg shadow-purple-900/50">
+                            <i class="fas fa-sitemap text-sm text-white"></i>
+                        </div>
+                        <div class="hidden md:block"></div>
+                        <div class="md:pl-4">
+                            <h3 class="font-semibold text-white text-lg">Data Structures &amp; Algorithms</h3>
+                            <p class="text-sm text-gray-400">Arrays, linked lists, trees, graphs and core problem-solving patterns.</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-step relative pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-8 fade-in-up">
+                        <div class="absolute left-0 md:left-1/2 top-1 w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center md:-translate-x-1/2 shadow-lg shadow-purple-900/50">
+                            <i class="fas fa-cubes text-sm text-white"></i>
+                        </div>
+                        <div class="md:text-right md:pr-4">
+                            <h3 class="font-semibold text-white text-lg">Object-Oriented Programming</h3>
+                            <p class="text-sm text-gray-400">Classes, inheritance, encapsulation and design fundamentals.</p>
+                        </div>
+                        <div class="hidden md:block"></div>
+                    </div>
+
+                    <div class="skill-step relative pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-8 fade-in-up">
+                        <div class="absolute left-0 md:left-1/2 top-1 w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center md:-translate-x-1/2 shadow-lg shadow-purple-900/50">
+                            <i class="fab fa-git-alt text-sm text-white"></i>
+                        </div>
+                        <div class="hidden md:block"></div>
+                        <div class="md:pl-4">
+                            <h3 class="font-semibold text-white text-lg">Git &amp; GitHub</h3>
+                            <p class="text-sm text-gray-400">Version control, branching, pull requests and team collaboration workflows.</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-step relative pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-8 fade-in-up">
+                        <div class="absolute left-0 md:left-1/2 top-1 w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center md:-translate-x-1/2 shadow-lg shadow-purple-900/50">
+                            <i class="fab fa-react text-sm text-white"></i>
+                        </div>
+                        <div class="md:text-right md:pr-4">
+                            <h3 class="font-semibold text-white text-lg">React.js</h3>
+                            <p class="text-sm text-gray-400">Components, hooks and state management for interactive UIs.</p>
+                        </div>
+                        <div class="hidden md:block"></div>
+                    </div>
+
+                    <div class="skill-step relative pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-8 fade-in-up">
+                        <div class="absolute left-0 md:left-1/2 top-1 w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center md:-translate-x-1/2 shadow-lg shadow-purple-900/50">
+                            <i class="fas fa-plug text-sm text-white"></i>
+                        </div>
+                        <div class="hidden md:block"></div>
+                        <div class="md:pl-4">
+                            <h3 class="font-semibold text-white text-lg">API Integration</h3>
+                            <p class="text-sm text-gray-400">Fetching, parsing and displaying real-world data from REST &amp; GitHub APIs.</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-step relative pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-8 fade-in-up">
+                        <div class="absolute left-0 md:left-1/2 top-1 w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center md:-translate-x-1/2 shadow-lg shadow-purple-900/50">
+                            <i class="fab fa-js text-sm text-white"></i>
+                        </div>
+                        <div class="md:text-right md:pr-4">
+                            <h3 class="font-semibold text-white text-lg">JavaScript</h3>
+                            <p class="text-sm text-gray-400">DOM manipulation, async/await and modern ES6+ patterns.</p>
+                        </div>
+                        <div class="hidden md:block"></div>
+                    </div>
+
+                    <div class="skill-step relative pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-8 fade-in-up">
+                        <div class="absolute left-0 md:left-1/2 top-1 w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center md:-translate-x-1/2 shadow-lg shadow-purple-900/50">
+                            <i class="fas fa-puzzle-piece text-sm text-white"></i>
+                        </div>
+                        <div class="hidden md:block"></div>
+                        <div class="md:pl-4">
+                            <h3 class="font-semibold text-white text-lg">Problem Solving</h3>
+                            <p class="text-sm text-gray-400">Breaking down complex problems into clean, logical solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-step relative pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-8 fade-in-up">
+                        <div class="absolute left-0 md:left-1/2 top-1 w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center md:-translate-x-1/2 shadow-lg shadow-purple-900/50">
+                            <i class="fas fa-server text-sm text-white"></i>
+                        </div>
+                        <div class="md:text-right md:pr-4">
+                            <h3 class="font-semibold text-white text-lg">Backend Basics</h3>
+                            <p class="text-sm text-gray-400">Django fundamentals, routing and server-side logic.</p>
+                        </div>
+                        <div class="hidden md:block"></div>
+                    </div>
+
+                    <div class="skill-step relative pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-8 fade-in-up">
+                        <div class="absolute left-0 md:left-1/2 top-1 w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center md:-translate-x-1/2 shadow-lg shadow-purple-900/50">
+                            <i class="fas fa-database text-sm text-white"></i>
+                        </div>
+                        <div class="hidden md:block"></div>
+                        <div class="md:pl-4">
+                            <h3 class="font-semibold text-white text-lg">SQL / Database Management</h3>
+                            <p class="text-sm text-gray-400">Schema design, queries and managing relational data.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="testimonials" class="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
         <div class="container mx-auto px-8">
             <h2 class="text-4xl font-bold text-center mb-16 gradient-text">What People Say</h2>

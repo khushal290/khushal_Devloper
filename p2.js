@@ -119,111 +119,16 @@
             }
         });
         
-        // Download Resume as Text File (More Reliable)
-        document.getElementById('downloadResume').addEventListener('click', function() {
-            // Create a simple text resume
-            const resumeContent = `KHUSHAL YADAV
-Agra, Uttar Pradesh, India • +91-7465989528 • khushalyadav211@gmail.com
-LinkedIn | 
-GitHub | 
-Portfolio | 
-PROFESSIONAL SUMMARY
-LeetCode
-B.Tech CSE student with strong foundations in Data Structures, Algorithms, and Backend Development using Java & Spring Boot.
-Built scalable REST APIs and database-driven applications with hands-on experience in MySQL, Git, and system design
-fundamentals. Actively solving coding problems and exploring software engineering best practices. 
-TECHNICAL SKILLS
-Languages:
-Frameworks:
-Core Concepts:
-Developer Tools:
-Libraries:
-Java, C, SQL, JavaScript (ES6+), Python, HTML5, CSS3
-Spring Boot, Spring MVC, Spring Security, JDBC, Hibernate ORM, JPA
-Object-Oriented Programming (OOP), Java Collections Framework, SOLID Principles, RESTful APIs,
-DBMS
-Git, GitHub, Postman, IntelliJ IDEA, VS Code, Maven, Docker (Basics)
-JSON parsing (Jackson), JSON Web Tokens (JWT), Lombok
-TECHNICAL PROJECTS
-Student Management System API | Backend Project
-Technologies: Java, Spring Boot, MySQL, Spring Data JPA, Hibernate, Maven, Postman
-• 
-• 
-Engineered a robust, production-ready RESTful API utilizing a clean layered architecture (Controller-Service-Repository) to
-securely process and manage student academic profiles and real-time course enrollments.
-Implemented structured CRUD methodologies alongside declarative data validation and centralized custom global exception
-handling, improving service reliability and data consistency.
-Employee Performance Analytics System | Backend Project
-Technologies: Java, Spring Boot, MySQL, JPA, Hibernate, REST APIs, Spring Security
-• 
-• 
-Architected a back-end tracking platform focused on structural metrics for enterprise workforces, establishing specialized
-modules for tasks, active attendance metrics, and objective performance milestones.
-Built analytics endpoints to aggregate raw operational data into department-wise performance insights and productivity metrics,
-utilizing complex relational database operations and custom repository mappings.
-Personal Developer Portfolio Website | Frontend Project
-Technologies: HTML5, CSS3, JavaScript (ES6), Git, GitHub Pages
-• 
-• 
-Designed and constructed an interactive, responsive portfolio showcase with optimized UI/UX patterns to elegantly display
-engineering credentials, project architectures, and contact infrastructure.
-Configured optimized build architectures and successfully automated deployment through modern version control paradigms
-directly onto GitHub Pages.
-EDUCATION
-Bachelor of Technology (B.Tech) - Computer Science and Engineering
-FET Agra College (Dr. A.P.J. Abdul Kalam Technical University)
-Senior Secondary (12th Grade), CBSE
-Gyan Deep Public School
-Secondary (10th Grade), CBSE
-Sarvodaya Public School
-CERTIFICATIONS & SIMULATION WORK
-Aug 2024 – Jul 2028
-CGPA: 7.0/10
-Apr 2021 – Mar 2023
-Percentage: 75.8%
-Apr 2019 – Mar 2021
-Percentage: 64.4%
-Software Engineering Virtual Experience – JPMorgan Chase & Co.
-Credential issued via Forage
-• 
-Jun 2026
-Executed comprehensive codebase analyses and structural debugging tasks modeling foundational enterprise environments and
-workflows.
-• 
-Acquired practical context regarding continuous integration cycles and collaborative code development practices typical of real
-world agile financial software delivery.
-Software Engineering Virtual Experience – Walmart Global Tech
-Credential issued via Forage
-• 
-Jun 2026
-Simulated developer responsibilities addressing scalable processing and architectural problem solving for modern high
-availability retail systems.
-Software Engineering Virtual Experience – Wells Fargo
-Credential issued via Forage
-• 
-Jun 2026
-Analyzed mock real-world software specifications to refine system diagnostics, logic optimization, and baseline code
-readability.`;
-
-            // Create download link
-            const element = document.createElement('a');
-            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(resumeContent));
-            element.setAttribute('download', 'Khushal_Yadav_Resume.txt');
-            element.style.display = 'none';
-            document.body.appendChild(element);
-            element.click();
-            document.body.removeChild(element);
-
-            // Show success message
-            const button = this;
-            const originalText = button.innerHTML;
-            button.innerHTML = '<i class="fas fa-check"></i><span>Downloaded!</span>';
-            button.disabled = true;
-
-            setTimeout(() => {
-                button.innerHTML = originalText;
-                button.disabled = false;
-            }, 2000);
+        // Resume download buttons: the <a download> attribute handles the
+        // actual download, this just gives the recruiter visual confirmation.
+        document.querySelectorAll('.download-btn').forEach((btn) => {
+            btn.addEventListener('click', function () {
+                const originalHTML = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check dl-icon"></i><span>Downloaded!</span>';
+                setTimeout(() => {
+                    this.innerHTML = originalHTML;
+                }, 2000);
+            });
         });
 
         // Dark Mode Toggle
